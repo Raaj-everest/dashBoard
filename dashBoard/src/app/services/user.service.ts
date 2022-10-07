@@ -14,8 +14,7 @@ export class UserService {
 return this.http.get<User>('https://reqres.in/api/users/'+param).pipe(catchError(this.errorHandler));
   }
   errorHandler(error:HttpErrorResponse){
-console.error(error);
-console.error(error.message)
+window.alert("Failed to fetch data");
 return throwError(error.message);
   }
 }
