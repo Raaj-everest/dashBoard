@@ -9,33 +9,35 @@
 
 <body>
     <div class="container-fluid">
-        <form>
+        <form [formGroup]="userForm">
             <div class="row">
                 <div class="col-md-1">
-                    <button type="button" class="btn btn-primary" >1</button>
+                    <button type="button" class="btn btn-primary" (click)="getUser(1)">1</button>
                 </div>
                 <div class="col-md-1">
-                    <button type="button" class="btn btn-primary" >2</button>
+                    <button type="button" class="btn btn-primary" (click)="getUser(2)">2</button>
                 </div>
                 <div class="col-md-1">
-                    <button type="button" class="btn btn-primary" >3</button>
+                    <button type="button" class="btn btn-primary" (click)="getUser(3)">3</button>
                 </div>
                 <div class="col-md-1">
-                    <button type="button" class="btn btn-danger" >100</button>
+                    <button type="button" class="btn btn-danger" (click)="getUser(100)">100</button>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-md-4">
                     <ul type="circle">
-                        <li> <label>Email</label>
-                            <input type="text" class="form-control">
+                        <li><div class="form-group"> <label>Email</label>
+                            <input type="text" class="form-control" formControlName="emailId" [value]="emailId"> 
+                        </div>
                         </li>
-                        <li> <label>Name</label>
-                            <input type="text" class="form-control">
+                        <li> <div class="form-group"> <label>Name</label>
+                            <input type="text" class="form-control" formControlName="name" [value]="name"> 
+                        </div>
                         </li>
                     </ul>
-                    <img src="https://pdtxar.com/wp-content/uploads/2019/04/person-placeholder.jpg" alt="Image of the user">
+                    <img src="{{avatar}}" alt="Image of the user">
                 </div>
                 
             </div>

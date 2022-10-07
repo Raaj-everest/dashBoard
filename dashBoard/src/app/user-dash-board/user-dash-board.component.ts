@@ -28,9 +28,10 @@ this.userForm = this.formBuilder.group({
  getUser(id:number){
       this.userService.getUsers(id).subscribe(response=>{
         this.user=response;
+        this.emailId=this.user.data.email;
+        this.avatar = this.user.data.avatar;
+        this.name = (this.user.data.first_name+" "+this.user.data.last_name)
       });
-      this.emailId=this.user.data.email;
-      this.avatar = this.user.data.avatar;
-      this.name = (this.user.data.first_name+" "+this.user.data.last_name)
+     
  }
 }
